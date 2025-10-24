@@ -1,0 +1,28 @@
+package labtask5question2;
+
+import java.util.Scanner;
+
+public class Labtask5question2 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);  
+
+        System.out.println("Enter a DNA sequence:");
+        String seq = sc.next().toUpperCase(); 
+        System.out.printf("The DNA sequence is: %s%n", seq);
+
+        System.out.println("Enter a motif to search in the sequence:");
+        String motif = sc.next().toUpperCase();
+
+        int count = 0;
+        int index = 0;
+
+       
+        while ((index = seq.indexOf(motif, index)) != -1) {
+            count++;
+            index++; 
+        }
+
+        System.out.println("The motif \"" + motif + "\" occurs " + count + " times in the DNA sequence.");
+    }
+}
